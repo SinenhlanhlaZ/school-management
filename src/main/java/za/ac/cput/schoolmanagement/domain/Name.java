@@ -82,5 +82,4 @@ public class Name {
             return new Name(this);
         }
     }
-public class Name {
 }
