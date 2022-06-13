@@ -2,6 +2,8 @@ package za.ac.cput.schoolmanagement.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import za.ac.cput.schoolmanagement.domain.Student;
+
 /*
     Student.java
     Repository for Student
@@ -9,5 +11,5 @@ import org.springframework.stereotype.Repository;
     Date: 12/06/2022
 */
 @Repository
-public interface StudentRepository extends JpaRepository<StudentRepository, String> {
+public interface StudentRepository extends JpaRepository<Student, String> {
 }
