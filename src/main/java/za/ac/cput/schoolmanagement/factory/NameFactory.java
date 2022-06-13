@@ -16,6 +16,5 @@ public class NameFactory {
         middleName = StringHelper.setEmptyIfNull(middleName);
         return new Name.Builder().firstName(firstName).middleName(middleName).lastName(lastName).build();
     }
-
-public class NameFactory {
 }
+

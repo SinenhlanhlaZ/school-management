@@ -12,7 +12,8 @@ import za.ac.cput.schoolmanagement.helper.StringHelper;
 public class EmployeeFactory {
     public static Employee build(String staffId, String email, Name name) {
         StringHelper.checkStringParam("staff-id", staffId);
-        StringHelper.checkObjectParam("name", name);
+        StringHelper.checkStringParam("email",email);
+        StringHelper.checkObjectNull("name", name);
         StringHelper.isEmailValid(email);
         return new Employee.Builder().staffId(staffId).email(email).name(name).build();
     }

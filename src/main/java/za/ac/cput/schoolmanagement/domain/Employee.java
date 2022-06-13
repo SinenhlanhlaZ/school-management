@@ -1,6 +1,5 @@
 package za.ac.cput.schoolmanagement.domain;
 
-import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -24,10 +23,10 @@ public class Employee implements Serializable {
     private String email;
 
     @Embedded
+    @NotNull
     private Name name;
 
-    protected Employee() {
-    }
+    protected Employee() {}
 
     public Employee(Builder builder) {
         this.staffId = builder.staffId;
@@ -37,10 +36,6 @@ public class Employee implements Serializable {
 
     public Name getName() {
         return name;
-    }
-
-    public void setName(Name name) {
-        this.name = name;
     }
 
     public String getStaffId() {
@@ -88,12 +83,12 @@ public class Employee implements Serializable {
             return this;
         }
 
-        public Builder copy(Employee employee) {
+    /*    public Builder copy(Employee employee) {
             this.staffId = employee.staffId;
             this.email = employee.email;
             this.name = employee.name;
             return this;
-        }
+        }*/
 
         public Employee build() {
             return new Employee(this);
