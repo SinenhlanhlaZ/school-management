@@ -28,4 +28,5 @@ public class StringHelper {
         if (!emailValidator.isValid(email)) throw new IllegalArgumentException("Email is not valid");
     }
 
+public class StringHelper {
 }
