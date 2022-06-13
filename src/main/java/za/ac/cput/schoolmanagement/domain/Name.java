@@ -1,6 +1,7 @@
 package za.ac.cput.schoolmanagement.domain;
 
 import javax.persistence.Embeddable;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 /*
@@ -9,10 +10,10 @@ import java.util.Objects;
     Author: Fayaad Abrahams (218221630)
     Date: 11/06/2022
 */
-@Embeddable
+
 public class Name {
 
-    private  String firstName, middleName, lastName;
+    private String firstName, middleName, lastName;
 
     protected Name() {
     }
@@ -23,7 +24,12 @@ public class Name {
         this.lastName = builder.lastName;
     }
 
-    public String getFirstName() {return firstName;}
+    //Errors relating to Embeddable classes needing Setters, will need to figure out
+    // how to keep classes immutable.
+
+    public @NotNull String getFirstName() {
+        return firstName;
+    }
 
     public String getMiddleName() {
         return middleName;
@@ -43,14 +49,13 @@ public class Name {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
         Name name = (Name) o;
         return firstName.equals(name.firstName) && middleName.equals(name.middleName) && lastName.equals(name.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), firstName, middleName, lastName);
+        return Objects.hash(firstName, middleName, lastName);
     }
 
     public static class Builder {

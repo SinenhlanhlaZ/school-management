@@ -18,7 +18,7 @@ public class StringHelper {
             throw new IllegalArgumentException(String.format("Invalid value for param: %s", paramName));
     }
 
-    public static void checkObjectParam(String objectName, Object objectValue) {
+    public static void checkObjectNull(String objectName, Object objectValue) {
         if (objectValue == null)
             throw new IllegalArgumentException(String.format("Invalid value for param: %s", objectName));
     }
