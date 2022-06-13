@@ -12,13 +12,13 @@ public class City
 {
     private String id;
     private String name;
-    private Country country;
+    //private Country country;
 
     public City(CityBuilder b)
     {
         this.id = b.id;
         this.name = b.name;
-        this.country = b.country;
+        //this.country = b.country;
     }
 
     public String getId() {
@@ -29,9 +29,9 @@ public class City
         return name;
     }
 
-    public Country getCountry() {
+    /*public Country getCountry() {
         return country;
-    }
+    }*/
 
     public void setId(String id) {
         this.id = id;
@@ -41,9 +41,9 @@ public class City
         this.name = name;
     }
 
-    public void setCountry(Country country) {
+    /*public void setCountry(Country country) {
         this.country = country;
-    }
+    }*/
 
     @Override
     public String toString() {
@@ -78,7 +78,7 @@ public class City
     {
         private String id;
         private String name;
-        private Country country;
+        //private Country country;
 
         public CityBuilder setCityId(String id)
         {
@@ -92,17 +92,17 @@ public class City
             return this;
         }
 
-        public CityBuilder setCityCountry(Country country)
+        /*public CityBuilder setCityCountry(Country country)
         {
             this.country = country;
             return this;
-        }
+        }*/
 
         public City.CityBuilder copy(City city)
         {
             this.id = city.id;
             this.name = city.name;
-            this.country = city.country;
+            //this.country = city.country;
             return this;
         }
 
