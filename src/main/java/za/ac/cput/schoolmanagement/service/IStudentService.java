@@ -6,7 +6,7 @@ import java.util.List;
     IStudentServices.java
     Interface for Student Service
     Author: Shina Kara 219333181
-    Date: 12/06/2022
+    Date: 14/06/2022
 */
 
 public interface IStudentService extends IService<Student,String> {
