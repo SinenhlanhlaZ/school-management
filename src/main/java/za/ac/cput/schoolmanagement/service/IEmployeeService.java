@@ -3,7 +3,12 @@ package za.ac.cput.schoolmanagement.service;
 import za.ac.cput.schoolmanagement.domain.Employee;
 
 import java.util.List;
-
+/*
+    IEmployeeService.java
+    Service Interface for Employee
+    Author: Fayaad Abrahams (218221630)
+    Date: 11/06/2022
+*/
 public interface IEmployeeService extends IService<Employee, String> {
     List<Employee> findAll();
 

@@ -83,12 +83,12 @@ public class Employee implements Serializable {
             return this;
         }
 
-    /*    public Builder copy(Employee employee) {
+        public Builder copy(Employee employee) {
             this.staffId = employee.staffId;
             this.email = employee.email;
             this.name = employee.name;
             return this;
-        }*/
+        }
 
         public Employee build() {
             return new Employee(this);
