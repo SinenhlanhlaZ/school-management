@@ -8,7 +8,12 @@ import za.ac.cput.schoolmanagement.service.IEmployeeService;
 
 import java.util.List;
 import java.util.Optional;
-
+/*
+    EmployeeServiceImpl.java
+    Implementation for EmployeeService
+    Author: Fayaad Abrahams (218221630)
+    Date: 14/06/2022
+*/
 @Service
 public class EmployeeServiceImpl implements IEmployeeService {
 
