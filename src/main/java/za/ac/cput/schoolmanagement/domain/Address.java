@@ -8,6 +8,10 @@ package za.ac.cput.schoolmanagement.domain;
  *
  * */
 
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
+
 public class Address {
 
     private String unitNumber;
@@ -15,6 +19,8 @@ public class Address {
     private String streetName;
     private String streetNumber;
     private int postalCode;
+
+    @Embedded
     private City city;
 
     public Address()

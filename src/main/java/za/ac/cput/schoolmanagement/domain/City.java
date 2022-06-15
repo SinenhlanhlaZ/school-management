@@ -8,9 +8,17 @@ package za.ac.cput.schoolmanagement.domain;
  *
  * */
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+@Entity
 public class City
 {
+    @Id
+    @NotNull
     private String id;
+    
     private String name;
     //private Country country;
 
