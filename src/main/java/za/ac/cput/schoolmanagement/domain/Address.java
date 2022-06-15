@@ -19,7 +19,11 @@ public class Address {
 
     public Address(AddressBuilder addB)
     {
-
+        this.complexName = addB.complexName;
+        this.streetName = addB.streetName;
+        this.streetNumber = addB.streetNumber;
+        this.postalCode = addB.postalCode;
+        this.unitNumber = addB.unitNumber;
     }
 
     public String getUnitNumber() {
