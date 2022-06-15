@@ -18,7 +18,7 @@ public class City
     @Id
     @NotNull
     private String id;
-    
+
     private String name;
     //private Country country;
 
