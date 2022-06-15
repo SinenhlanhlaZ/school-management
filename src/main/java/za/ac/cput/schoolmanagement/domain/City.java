@@ -14,6 +14,9 @@ public class City
     private String name;
     //private Country country;
 
+    public City()
+    {}
+
     public City(CityBuilder b)
     {
         this.id = b.id;

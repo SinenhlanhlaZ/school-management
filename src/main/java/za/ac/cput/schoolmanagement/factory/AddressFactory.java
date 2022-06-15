@@ -15,9 +15,7 @@ import za.ac.cput.schoolmanagement.helper.StringHelper;
 public class AddressFactory {
     public static Address build(String unitNumber, String streetName, String streetNumber, String complexName, int postalCode, City city)
     {
-        StringHelper.checkObjectNull("unitNumber", unitNumber);
         StringHelper.checkObjectNull("streetName", streetName);
-        //StringHelper.checkObjectNull("complexName", complexName);
         StringHelper.checkObjectNull("streetNumber", streetNumber);
         StringHelper.checkObjectNull("city", city);
 
@@ -25,6 +23,6 @@ public class AddressFactory {
                 .setUnitNumber(unitNumber)
                 .setStreetName(streetName)
                 .setStreetNumber(streetNumber)
-                .setCity(city).build();
+                /*.setCity(city)*/.build();
     }
 }

@@ -17,6 +17,9 @@ public class Address {
     private int postalCode;
     private City city;
 
+    public Address()
+    {}
+
     public Address(AddressBuilder addB)
     {
         this.complexName = addB.complexName;
