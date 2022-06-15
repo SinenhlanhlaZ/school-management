@@ -24,6 +24,7 @@ public class Address {
         this.streetNumber = addB.streetNumber;
         this.postalCode = addB.postalCode;
         this.unitNumber = addB.unitNumber;
+        this.city = addB.city;
     }
 
     public String getUnitNumber() {
