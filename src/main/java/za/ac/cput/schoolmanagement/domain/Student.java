@@ -1,5 +1,9 @@
 package za.ac.cput.schoolmanagement.domain;
 
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 /*
     Student.java
@@ -7,9 +11,20 @@ import java.util.Objects;
     Author: Shina Kara 219333181
     Date: 12/06/2022
 */
+@Entity
 public class Student {
-    private final String studentId, email;
+
+    @Id
+    @NotNull
+    private String studentId;
+
+    private String email;
+
+    @Embedded
     private Name name;
+
+    public Student() {
+    }
 
     private Student(Builder builder) {
         this.studentId = builder.studentId;

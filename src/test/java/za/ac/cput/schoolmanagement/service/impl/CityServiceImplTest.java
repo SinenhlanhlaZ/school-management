@@ -8,6 +8,9 @@ import za.ac.cput.schoolmanagement.domain.Country;
 import za.ac.cput.schoolmanagement.factory.CityFactory;
 import za.ac.cput.schoolmanagement.service.ICityService;
 
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 @SpringBootTest
@@ -42,7 +45,8 @@ public class CityServiceImplTest {
     @Test
     public void readAll()
     {
-
+        List<City> cityList = this.cityService.findAll();
+        assertEquals(0, cityList.size());
     }
 
 }
