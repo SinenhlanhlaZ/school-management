@@ -7,7 +7,7 @@ import java.util.List;
     Nonzwakazi Mgxaji 2131815284
 */
 
-public interface CountryService extends IService<Country, String> {
+public interface ICountryService extends IService<Country, String> {
     List<Country> findAll();
 
     void deleteById(String id);

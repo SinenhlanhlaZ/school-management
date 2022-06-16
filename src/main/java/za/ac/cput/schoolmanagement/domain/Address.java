@@ -10,6 +10,7 @@ package za.ac.cput.schoolmanagement.domain;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 public class Address {
@@ -21,6 +22,7 @@ public class Address {
     private int postalCode;
 
     @Embedded
+    @OneToOne
     private City city;
 
     public Address()

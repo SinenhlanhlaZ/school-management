@@ -1,12 +1,24 @@
 package za.ac.cput.schoolmanagement.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 /*
     Country.java
     Nonzwakazi Mgxaji 2131815284
 */
+@Entity
 public class Country {
-    private String id, name;
+
+    @Id
+    @NotNull
+    private String id;
+
+    private String name;
+
+    public Country()
+    {}
 
     private Country(Builder builder) {
         this.id = builder.id;

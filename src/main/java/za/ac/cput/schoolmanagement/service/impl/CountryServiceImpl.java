@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.schoolmanagement.domain.Country;
 import za.ac.cput.schoolmanagement.repository.CountryRepository;
-import za.ac.cput.schoolmanagement.service.CountryService;
+import za.ac.cput.schoolmanagement.service.ICountryService;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,7 +15,7 @@ import java.util.Optional;
 */
 
 @Service
-public class CountryServiceImpl implements CountryService{
+public class CountryServiceImpl implements ICountryService {
     private final CountryRepository repository;
 
     @Autowired
