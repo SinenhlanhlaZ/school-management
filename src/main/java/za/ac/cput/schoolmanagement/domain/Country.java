@@ -8,6 +8,9 @@ import java.util.Objects;
 public class Country {
     private String id, name;
 
+    public Country()
+    {}
+
     private Country(Builder builder) {
         this.id = builder.id;
         this.name = builder.name;
