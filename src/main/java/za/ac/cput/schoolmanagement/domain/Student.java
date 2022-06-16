@@ -40,6 +40,7 @@ public class Student {
         return email;
     }
 
+    @Embedded
     public Name getName() {
         return name;
     }
