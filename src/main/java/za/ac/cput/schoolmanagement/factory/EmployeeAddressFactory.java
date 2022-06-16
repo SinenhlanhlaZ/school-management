@@ -3,7 +3,6 @@ package za.ac.cput.schoolmanagement.factory;
 import za.ac.cput.schoolmanagement.domain.Address;
 import za.ac.cput.schoolmanagement.domain.EmployeeAddress;
 import za.ac.cput.schoolmanagement.helper.StringHelper;
-
 /*
     EmployeeAddressFactory.java
     Entity: EmployeeAddressFactory
@@ -12,16 +11,11 @@ import za.ac.cput.schoolmanagement.helper.StringHelper;
 */
 public class EmployeeAddressFactory {
 
-    public static EmployeeAddress build(String staffId, Address address)
-        throws IllegalAccessException {
-        checkAttributes(staffId, address);
+    public static EmployeeAddress build(String staffId, Address address) {
+        StringHelper.checkStringParam("staffId", staffId);
+        StringHelper.checkObjectNull("address", address);
         return new EmployeeAddress.Builder()
                 .setStaffId(staffId)
                 .setAddress(address).build();
-    }
-    private static void checkAttributes(String staffId, Address address)
-        throws IllegalAccessException {
-        StringHelper.checkStringParam("staffId", staffId);
-        StringHelper.checkObjectNull("address", address);
     }
 }
