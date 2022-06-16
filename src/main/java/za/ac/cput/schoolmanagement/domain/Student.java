@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Objects;
 /*
     Student.java
-    Repository for Student
+    Student Domain
     Author: Shina Kara 219333181
     Date: 12/06/2022
 */
