@@ -1,4 +1,9 @@
 package za.ac.cput.schoolmanagement.service;
 
-public interface IAddressService {
+import za.ac.cput.schoolmanagement.domain.Address;
+
+import java.util.List;
+
+public interface IAddressService extends IService<Address, String>{
+    List<Address> findAll();
 }
