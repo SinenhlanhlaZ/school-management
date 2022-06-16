@@ -1,14 +1,25 @@
 package za.ac.cput.schoolmanagement.domain;
+
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 /*
     EmployeeAddress.java
     Entity: EmployeeAddress
     Author: Ishmail T Mgwena (215088417)
     Date: 14 June 2022
 */
+@Entity
 public class EmployeeAddress {
-
+@Id
+@NotNull
 private String staffId;
+@Embedded
+@NotNull
 private Address address;
+
+protected EmployeeAddress(){}
 
 public EmployeeAddress(Builder builder) {
     this.staffId = builder.staffId;
