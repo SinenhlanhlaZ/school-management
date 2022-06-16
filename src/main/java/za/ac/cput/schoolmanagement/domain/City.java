@@ -29,6 +29,7 @@ public class City
     {
         this.id = b.id;
         this.name = b.name;
+        this.country = b.country;
     }
 
     public String getId() {
@@ -60,6 +61,7 @@ public class City
         return "City{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
+                ", country=" + country +
                 '}';
     }
 
