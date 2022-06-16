@@ -1,6 +1,5 @@
 package za.ac.cput.schoolmanagement.factory;
 
-import za.ac.cput.schoolmanagement.domain.Name;
 import za.ac.cput.schoolmanagement.domain.Country;
 import za.ac.cput.schoolmanagement.helper.StringHelper;
 

@@ -37,19 +37,19 @@ public class Country {
         return id.equals(country.id) && name.equals(country.name);
     }
 
-        @Override
-        public int hashCode() {
-            return Objects.hash(id, name);
-        }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
     }
 
     public static class Builder {
+        private String id, name;
 
         public Builder id(String id) {
             this.id = id;
             return this;
         }
-        public Builder name (Name name) {
+        public Builder name (String name) {
             this.name = name;
             return this;
         }
@@ -63,5 +63,5 @@ public class Country {
         public Country build() {
             return new Country(this);
         }
-    }
+}
 }
