@@ -8,6 +8,10 @@ package za.ac.cput.schoolmanagement.domain;
  *
  * */
 
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
+
 public class Address {
 
     private String unitNumber;
@@ -15,11 +19,21 @@ public class Address {
     private String streetName;
     private String streetNumber;
     private int postalCode;
+
+    @Embedded
     private City city;
+
+    public Address()
+    {}
 
     public Address(AddressBuilder addB)
     {
-
+        this.complexName = addB.complexName;
+        this.streetName = addB.streetName;
+        this.streetNumber = addB.streetNumber;
+        this.postalCode = addB.postalCode;
+        this.unitNumber = addB.unitNumber;
+        this.city = addB.city;
     }
 
     public String getUnitNumber() {
