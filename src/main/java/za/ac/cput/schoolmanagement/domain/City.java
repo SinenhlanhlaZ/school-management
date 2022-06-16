@@ -8,8 +8,10 @@ package za.ac.cput.schoolmanagement.domain;
  *
  * */
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -20,6 +22,9 @@ public class City
     private String id;
 
     private String name;
+
+    @Embedded
+    @OneToOne
     private Country country;
 
     public City()
