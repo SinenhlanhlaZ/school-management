@@ -9,7 +9,7 @@ import za.ac.cput.schoolmanagement.helper.StringHelper;
     Author: Ishmail T Mgwena (215088417)
     Date: 14 June 2022
 */
-public class EmployeeAddressFactory {
+public class EmployeeAddressFactory  {
 
     public static EmployeeAddress build(String staffId, Address address) {
         StringHelper.checkStringParam("staffId", staffId);
