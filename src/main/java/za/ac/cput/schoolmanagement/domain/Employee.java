@@ -26,7 +26,8 @@ public class Employee implements Serializable {
     @NotNull
     private Name name;
 
-    protected Employee() {}
+    protected Employee() {
+    }
 
     public Employee(Builder builder) {
         this.staffId = builder.staffId;

@@ -4,13 +4,13 @@ import org.junit.jupiter.api.Test;
 import za.ac.cput.schoolmanagement.domain.Address;
 import za.ac.cput.schoolmanagement.domain.City;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 public class AddressFactoryTest {
 
     @Test
-    public void buildWithoutComplexName()
-    {
+    public void buildWithoutComplexName() {
         Address add = new Address();
         add.setComplexName(null);
 
@@ -26,8 +26,7 @@ public class AddressFactoryTest {
     }
 
     @Test
-    public void checkIfAddressExists()
-    {
+    public void checkIfAddressExists() {
         Address add = new Address();
         add.setStreetNumber("91");
         add.setStreetName("Ninth Avenue");

@@ -7,7 +7,6 @@ import za.ac.cput.schoolmanagement.domain.Employee;
 import java.util.List;
 import java.util.Optional;
 
-
 /*
     EmployeeRepository.java
     Repository for Employee

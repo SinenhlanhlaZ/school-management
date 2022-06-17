@@ -3,11 +3,9 @@ package za.ac.cput.schoolmanagement.service.impl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import za.ac.cput.schoolmanagement.domain.*;
+import za.ac.cput.schoolmanagement.domain.Address;
+import za.ac.cput.schoolmanagement.domain.City;
 import za.ac.cput.schoolmanagement.factory.AddressFactory;
-import za.ac.cput.schoolmanagement.factory.CityFactory;
-import za.ac.cput.schoolmanagement.factory.EmployeeFactory;
-import za.ac.cput.schoolmanagement.factory.NameFactory;
 import za.ac.cput.schoolmanagement.service.IAddressService;
 
 @SpringBootTest
@@ -19,26 +17,22 @@ public class AddressServiceImplTest {
     IAddressService addrService;
 
     @Test
-    public void save()
-    {
+    public void save() {
 
     }
 
     @Test
-    public void read()
-    {
+    public void read() {
 
     }
 
     @Test
-    public void delete()
-    {
+    public void delete() {
 
     }
 
     @Test
-    public void readAll()
-    {
+    public void readAll() {
 
     }
 

@@ -24,27 +24,23 @@ public class CityServiceImplTest {
     ICityService cityService;
 
     @Test
-    public void save()
-    {
+    public void save() {
         City savedCity = this.cityService.save(this.city);
         assertSame(this.city, savedCity);
     }
 
     @Test
-    public void read()
-    {
+    public void read() {
 
     }
 
     @Test
-    public void delete()
-    {
+    public void delete() {
 
     }
 
     @Test
-    public void readAll()
-    {
+    public void readAll() {
         List<City> cityList = this.cityService.findAll();
         assertEquals(0, cityList.size());
     }

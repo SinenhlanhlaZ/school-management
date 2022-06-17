@@ -9,9 +9,7 @@ package za.ac.cput.schoolmanagement.domain;
  * */
 
 import javax.persistence.Embedded;
-import javax.persistence.Entity;
 import javax.persistence.OneToOne;
-import javax.validation.constraints.NotNull;
 
 public class Address {
 
@@ -25,11 +23,10 @@ public class Address {
     @OneToOne
     private City city;
 
-    public Address()
-    {}
+    public Address() {
+    }
 
-    public Address(AddressBuilder addB)
-    {
+    public Address(AddressBuilder addB) {
         this.complexName = addB.complexName;
         this.streetName = addB.streetName;
         this.streetNumber = addB.streetNumber;
@@ -98,8 +95,7 @@ public class Address {
                 '}';
     }
 
-    public static class AddressBuilder
-    {
+    public static class AddressBuilder {
         private String unitNumber;
         private String complexName;
         private String streetNumber;
@@ -107,44 +103,37 @@ public class Address {
         private int postalCode;
         private City city;
 
-        public AddressBuilder setUnitNumber(String unitNumber)
-        {
+        public AddressBuilder setUnitNumber(String unitNumber) {
             this.unitNumber = unitNumber;
             return this;
         }
 
-        public AddressBuilder setComplexName(String complexName)
-        {
+        public AddressBuilder setComplexName(String complexName) {
             this.complexName = complexName;
             return this;
         }
 
-        public AddressBuilder setStreetNumber(String streetNumber)
-        {
+        public AddressBuilder setStreetNumber(String streetNumber) {
             this.streetNumber = streetNumber;
             return this;
         }
 
-        public AddressBuilder setStreetName(String streetName)
-        {
+        public AddressBuilder setStreetName(String streetName) {
             this.streetName = streetName;
             return this;
         }
 
-        public AddressBuilder setPostalCode(int postalCode)
-        {
+        public AddressBuilder setPostalCode(int postalCode) {
             this.postalCode = postalCode;
             return this;
         }
 
-        public AddressBuilder setCity(City city)
-        {
+        public AddressBuilder setCity(City city) {
             this.city = city;
             return this;
         }
 
-        public Address.AddressBuilder copy(Address address)
-        {
+        public Address.AddressBuilder copy(Address address) {
             this.unitNumber = address.unitNumber;
             this.complexName = address.complexName;
             this.streetNumber = address.streetNumber;
@@ -154,8 +143,7 @@ public class Address {
             return this;
         }
 
-        public Address build()
-        {
+        public Address build() {
             Address addr = new Address(this);
             return addr;
         }
