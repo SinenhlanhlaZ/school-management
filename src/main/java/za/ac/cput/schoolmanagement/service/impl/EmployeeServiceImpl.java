@@ -8,6 +8,7 @@ import za.ac.cput.schoolmanagement.service.IEmployeeService;
 
 import java.util.List;
 import java.util.Optional;
+
 /*
     EmployeeServiceImpl.java
     Implementation for EmployeeService
@@ -19,7 +20,10 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
     private final EmployeeRepository repository;
 
-    @Autowired public EmployeeServiceImpl(EmployeeRepository repository) {this.repository = repository;}
+    @Autowired
+    public EmployeeServiceImpl(EmployeeRepository repository) {
+        this.repository = repository;
+    }
 
     @Override
     public List<Employee> findAll() {
@@ -34,7 +38,9 @@ public class EmployeeServiceImpl implements IEmployeeService {
     }
 
     @Override
-    public Employee save(Employee employee) { return this.repository.save(employee);}
+    public Employee save(Employee employee) {
+        return this.repository.save(employee);
+    }
 
     @Override
     public Optional<Employee> read(String id) {
@@ -46,10 +52,10 @@ public class EmployeeServiceImpl implements IEmployeeService {
         this.repository.delete(employee);
     }
 
-       /* Code a service to get the employee name given an employee email. Check if the email is valid and exists.
-    @Override
-    public List<Employee> findByName_FirstName(String email) {
-        return this.repository.findByName_FirstName(email);
-    }
-*/
+       /* Code a service to get the employee name given an employee email. Check if the email is valid and exists.*/
+       @Override
+       public Optional<Employee> findByEmail(String email) {
+           return this.repository.findByEmail(email);
+       }
+
 }

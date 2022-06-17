@@ -13,8 +13,7 @@ import za.ac.cput.schoolmanagement.domain.Country;
 import za.ac.cput.schoolmanagement.helper.StringHelper;
 
 public class CityFactory {
-    public static City build(String id, String name, Country country)
-    {
+    public static City build(String id, String name, Country country) {
         StringHelper.isEmptyOrNull("1");
         StringHelper.checkStringParam("name", name);
 

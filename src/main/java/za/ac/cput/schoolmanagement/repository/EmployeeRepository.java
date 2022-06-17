@@ -4,7 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import za.ac.cput.schoolmanagement.domain.Employee;
 
-
+import java.util.List;
+import java.util.Optional;
 
 /*
     EmployeeRepository.java
@@ -15,5 +16,5 @@ import za.ac.cput.schoolmanagement.domain.Employee;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, String> {
     //Code a service to get the employee name given an employee email. Check if the email is valid and exists.
-    /*List<Employee> findByName_FirstName(String email);*/
+    Optional<Employee> findByEmail (String email);
 }

@@ -5,7 +5,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.schoolmanagement.domain.Name;
+
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
 /*
     NameFactoryTest.java
     Test Class for NameFactory
@@ -36,14 +38,14 @@ class NameFactoryTest {
     @Order(3)
     @Test
     public void buildWithNullMiddleName() {
-        Name name = NameFactory.build("Fayaad","","Abrahams");
+        Name name = NameFactory.build("Fayaad", "", "Abrahams");
         System.out.println(name);
     }
 
     @Order(4)
     @Test
     public void buildWithSuccess() {
-        Name name = NameFactory.build("Fayaad","Middle","Abrahams");
+        Name name = NameFactory.build("Fayaad", "Middle", "Abrahams");
         System.out.println(name);
     }
 }

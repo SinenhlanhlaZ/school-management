@@ -1,12 +1,13 @@
 package za.ac.cput.schoolmanagement.service.impl;
 
- import org.springframework.beans.factory.annotation.Autowired;
- import org.springframework.stereotype.Service;
- import za.ac.cput.schoolmanagement.domain.Student;
- import za.ac.cput.schoolmanagement.repository.StudentRepository;
- import za.ac.cput.schoolmanagement.service.IStudentService;
- import java.util.List;
- import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import za.ac.cput.schoolmanagement.domain.Student;
+import za.ac.cput.schoolmanagement.repository.StudentRepository;
+import za.ac.cput.schoolmanagement.service.IStudentService;
+
+import java.util.List;
+import java.util.Optional;
 /*
     StudentServiceImpl.java
     Implementation for Student Service
@@ -19,7 +20,10 @@ public class StudentServiceImpl implements IStudentService {
 
     private final StudentRepository repository;
 
-    @Autowired public StudentServiceImpl(StudentRepository repository) {this.repository = repository;}
+    @Autowired
+    public StudentServiceImpl(StudentRepository repository) {
+        this.repository = repository;
+    }
 
     @Override
     public List<Student> findAll() {
@@ -40,8 +44,7 @@ public class StudentServiceImpl implements IStudentService {
     }
 
     @Override
-    public Optional<Student> read(String id)
-    {
+    public Optional<Student> read(String id) {
         return this.repository.findById(id);
     }
 

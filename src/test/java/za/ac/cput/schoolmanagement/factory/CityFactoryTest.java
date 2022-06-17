@@ -7,8 +7,7 @@ import za.ac.cput.schoolmanagement.domain.City;
 public class CityFactoryTest {
 
     @Test
-    void checkIfIdExists()
-    {
+    void checkIfIdExists() {
         City city = new City();
         city.setId("1");
 

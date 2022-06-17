@@ -15,11 +15,10 @@ public class StudentAddress {
     @Embedded
     private Address address;
 
-    public StudentAddress()
-    {}
+    public StudentAddress() {
+    }
 
-    private StudentAddress(Builder stuAddrBuilder)
-    {
+    private StudentAddress(Builder stuAddrBuilder) {
         this.studentId = stuAddrBuilder.studentId;
         this.address = stuAddrBuilder.address;
     }
@@ -28,16 +27,8 @@ public class StudentAddress {
         return studentId;
     }
 
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
-    }
-
     public Address getAddress() {
         return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
     }
 
     @Override
@@ -48,32 +39,27 @@ public class StudentAddress {
                 '}';
     }
 
-    public static class Builder
-    {
+    public static class Builder {
         private String studentId;
         private Address address;
 
-        public Builder studentId(String studentId)
-        {
+        public Builder setStudentId(String studentId) {
             this.studentId = studentId;
             return this;
         }
 
-        public Builder address(Address address)
-        {
+        public Builder setAddress(Address address) {
             this.address = address;
             return this;
         }
 
-        public Builder copy(StudentAddress stuAdd)
-        {
+        public Builder copy(StudentAddress stuAdd) {
             this.studentId = stuAdd.studentId;
             this.address = stuAdd.address;
             return this;
         }
 
-        public StudentAddress build()
-        {
+        public StudentAddress build() {
             return new StudentAddress(this);
         }
 

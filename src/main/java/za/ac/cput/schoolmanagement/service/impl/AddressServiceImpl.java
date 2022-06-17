@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.schoolmanagement.domain.Address;
 import za.ac.cput.schoolmanagement.repository.AddressRepository;
-import za.ac.cput.schoolmanagement.repository.EmployeeRepository;
 import za.ac.cput.schoolmanagement.service.IAddressService;
 
 import java.util.List;
@@ -24,8 +23,7 @@ public class AddressServiceImpl implements IAddressService {
     private final AddressRepository addrRepository;
 
     @Autowired
-    public AddressServiceImpl(AddressRepository addRepository)
-    {
+    public AddressServiceImpl(AddressRepository addRepository) {
         this.addrRepository = addRepository;
     }
 

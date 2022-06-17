@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import za.ac.cput.schoolmanagement.domain.Country;
 import za.ac.cput.schoolmanagement.repository.CountryRepository;
 import za.ac.cput.schoolmanagement.service.ICountryService;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -19,12 +20,12 @@ public class CountryServiceImpl implements ICountryService {
     private final CountryRepository repository;
 
     @Autowired
-    public CountryServiceImpl(CountryRepository repository){
+    public CountryServiceImpl(CountryRepository repository) {
         this.repository = repository;
     }
 
     @Override
-    public List<Country> findAll(){
+    public List<Country> findAll() {
         return this.repository.findAll();
     }
 
@@ -36,17 +37,17 @@ public class CountryServiceImpl implements ICountryService {
     }
 
     @Override
-    public Country save(Country country){
+    public Country save(Country country) {
         return this.repository.save(country);
     }
 
     @Override
-    public Optional<Country> read(String id){
+    public Optional<Country> read(String id) {
         return this.repository.findById(id);
     }
 
     @Override
-    public void delete(Country country){
+    public void delete(Country country) {
         this.repository.delete(country);
     }
 }

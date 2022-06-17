@@ -3,6 +3,8 @@ package za.ac.cput.schoolmanagement.service;
 import za.ac.cput.schoolmanagement.domain.Employee;
 
 import java.util.List;
+import java.util.Optional;
+
 /*
     IEmployeeService.java
     Service Interface for Employee
@@ -15,6 +17,6 @@ public interface IEmployeeService extends IService<Employee, String> {
     void deleteById(String id);
 
     //Code a service to get the employee name given an employee email. Check if the email is valid and exists.
-    /* List<Employee> findByName_FirstName(String email);*/
+    Optional<Employee> findByEmail (String email);
 
 }

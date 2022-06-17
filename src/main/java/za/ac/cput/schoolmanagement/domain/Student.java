@@ -4,7 +4,9 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.Objects;
+
 /*
     Student.java
     Student Domain
@@ -12,16 +14,19 @@ import java.util.Objects;
     Date: 12/06/2022
 */
 @Entity
-public class Student {
+public class Student implements Serializable {
     @Id
     @NotNull
-    private  String studentId, email;
+    private String studentId;
+    @NotNull
+    private String email;
 
     @Embedded
     @NotNull
     private Name name;
 
-    protected Student() {}
+    protected Student() {
+    }
 
     private Student(Builder builder) {
         this.studentId = builder.studentId;
@@ -89,7 +94,6 @@ public class Student {
     }
 
 
-
     public static class Builder {
         private String studentId, email;
         private Name name;
@@ -98,7 +102,8 @@ public class Student {
             this.studentId = studentId;
             return this;
         }
-        public Builder name (Name name) {
+
+        public Builder name(Name name) {
             this.name = name;
             return this;
         }
