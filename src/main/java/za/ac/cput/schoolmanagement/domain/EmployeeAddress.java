@@ -1,15 +1,32 @@
 package za.ac.cput.schoolmanagement.domain;
 
+import com.sun.istack.NotNull;
+
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
+
 /*
     EmployeeAddress.java
     Entity: EmployeeAddress
     Author: Ishmail T Mgwena (215088417)
     Date: 14 June 2022
-*/
-public class EmployeeAddress {
 
+*/
+
+@Entity
+public class EmployeeAddress implements Serializable {
+    @Id
+    @NotNull
     private String staffId;
+
+    @Embedded
+    @NotNull
     private Address address;
+
+    protected EmployeeAddress() {
+    }
 
     public EmployeeAddress(Builder builder) {
         this.staffId = builder.staffId;
@@ -26,10 +43,7 @@ public class EmployeeAddress {
 
     @Override
     public String toString() {
-        return "EmployeeAddress{" +
-                "staffId='" + staffId + '\'' +
-                ", address=" + address +
-                '}';
+        return "EmployeeAddress{" + "staffId='" + staffId + '\'' + ", address=" + address + '}';
     }
 
     public static class Builder {
