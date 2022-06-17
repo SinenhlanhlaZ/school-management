@@ -4,7 +4,8 @@ import org.junit.jupiter.api.Test;
 import za.ac.cput.schoolmanagement.domain.Name;
 import za.ac.cput.schoolmanagement.domain.Student;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class StudentFactoryTest {
     Name name = NameFactory.build(
@@ -15,16 +16,17 @@ class StudentFactoryTest {
 
     @Test
     void buildWorking() {
-        Student student = StudentFactory.build("16", "shinakara@gmail.com",name);
+        Student student = StudentFactory.build("16", "shinakara@gmail.com", name);
         System.out.println(student);
         assertNotNull(student);
     }
+
     @Test
     void buildNotWorking() {
-       Exception exception = assertThrows(IllegalArgumentException.class,
-               () -> EmployeeFactory.build(null, "shinakara16@gmail.com",name));
+        Exception exception = assertThrows(IllegalArgumentException.class,
+                () -> EmployeeFactory.build(null, "shinakara16@gmail.com", name));
         String exceptionMessage = exception.getMessage();
-       System.out.println(exceptionMessage);
+        System.out.println(exceptionMessage);
     }
 }
 

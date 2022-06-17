@@ -17,5 +17,6 @@ public interface IEmployeeService extends IService<Employee, String> {
     void deleteById(String id);
 
     //Code a service to get the employee name given an employee email. Check if the email is valid and exists.
-    Optional<Employee> findByEmail(String email);
+    Optional<Employee> findByEmail (String email);
+
 }

@@ -1,6 +1,5 @@
 package za.ac.cput.schoolmanagement.domain;
 
-import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
 

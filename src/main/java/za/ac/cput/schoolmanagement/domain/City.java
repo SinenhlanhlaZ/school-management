@@ -15,8 +15,7 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class City
-{
+public class City {
     @Id
     @NotNull
     private String id;
@@ -26,11 +25,10 @@ public class City
     @Embedded
     private Country country;
 
-    public City()
-    {}
+    public City() {
+    }
 
-    public City(CityBuilder b)
-    {
+    public City(CityBuilder b) {
         this.id = b.id;
         this.name = b.name;
         this.country = b.country;
@@ -70,18 +68,14 @@ public class City
     }
 
     @Override
-    public boolean equals(Object obj)
-    {
-        if(this == obj)
-        {
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        if(obj == null || getClass() != obj.getClass())
-        {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        if(!super.equals(obj))
-        {
+        if (!super.equals(obj)) {
             return false;
         }
         City c = (City) obj;
@@ -90,40 +84,34 @@ public class City
                 country.equals(c.country)*/;
     }
 
-    public static class CityBuilder
-    {
+    public static class CityBuilder {
         private String id;
         private String name;
         private Country country;
 
-        public CityBuilder setCityId(String id)
-        {
+        public CityBuilder setCityId(String id) {
             this.id = id;
             return this;
         }
 
-        public CityBuilder setCityName(String name)
-        {
+        public CityBuilder setCityName(String name) {
             this.name = name;
             return this;
         }
 
-        public CityBuilder setCityCountry(Country country)
-        {
+        public CityBuilder setCityCountry(Country country) {
             this.country = country;
             return this;
         }
 
-        public City.CityBuilder copy(City city)
-        {
+        public City.CityBuilder copy(City city) {
             this.id = city.id;
             this.name = city.name;
             this.country = city.country;
             return this;
         }
 
-        public City build()
-        {
+        public City build() {
             City c = new City(this);
             return c;
         }

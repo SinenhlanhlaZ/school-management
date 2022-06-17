@@ -1,7 +1,5 @@
 package za.ac.cput.schoolmanagement.controller;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +12,11 @@ import za.ac.cput.schoolmanagement.domain.Name;
 import za.ac.cput.schoolmanagement.domain.Student;
 import za.ac.cput.schoolmanagement.factory.NameFactory;
 import za.ac.cput.schoolmanagement.factory.StudentFactory;
+
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 /*
     StudentControllerTest.java
     Test for Student Controller
@@ -26,31 +26,32 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class StudentControllerTest {
     //Adding name to test
-    private final Name name = NameFactory.build("Shina","-","Kara");
+    private final Name name = NameFactory.build("Shina", "-", "Kara");
 
     @LocalServerPort
     private int port;
 
     @Autowired
     private StudentController controller;
-    @Autowired private TestRestTemplate restTemplate;
-    private  String baseUrl;
+    @Autowired
+    private TestRestTemplate restTemplate;
+    private String baseUrl;
     private Student student;
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         this.student = StudentFactory.build("16", "shinakara@gmail.com", name);
-        this.baseUrl = "http://localhost:" +this.port+ "/schoolmanagement/student/";
+        this.baseUrl = "http://localhost:" + this.port + "/schoolmanagement/student/";
     }
 
     @Test
     void save() {
         String url = baseUrl + "save";
         System.out.println(url);
-        ResponseEntity<Student> response = this.restTemplate.postForEntity(url, this.student,Student.class);
+        ResponseEntity<Student> response = this.restTemplate.postForEntity(url, this.student, Student.class);
         System.out.println(response);
         assertAll(
-                ()-> assertEquals(HttpStatus.OK, response.getStatusCode()),
+                () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
                 () -> assertNotNull(response.getBody())
         );
     }
@@ -71,9 +72,10 @@ class StudentControllerTest {
     @Test
     void delete() {
 
-        String url = baseUrl +"delete/" + this.student.getStudentId();
+        String url = baseUrl + "delete/" + this.student.getStudentId();
         this.restTemplate.delete(url);
     }
+
     @Test
     void findAll() {
         String url = baseUrl + "all";

@@ -13,14 +13,15 @@ import za.ac.cput.schoolmanagement.helper.StringHelper;
 public class EmployeeAddressFactory {
 
     public static EmployeeAddress build(String staffId, Address address)
-        throws IllegalAccessException {
+            throws IllegalAccessException {
         checkAttributes(staffId, address);
         return new EmployeeAddress.Builder()
                 .setStaffId(staffId)
                 .setAddress(address).build();
     }
+
     private static void checkAttributes(String staffId, Address address)
-        throws IllegalAccessException {
+            throws IllegalAccessException {
         StringHelper.checkStringParam("staffId", staffId);
         StringHelper.checkObjectNull("address", address);
     }

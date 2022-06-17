@@ -26,13 +26,13 @@ public class CityServiceImplTest {
     ICityService cityService;
 
     @Test
-    public void save()
-    {
+    public void save() {
         City savedCity = this.cityService.save(this.city);
         assertSame(this.city, savedCity);
     }
 
     @Test
+<<<<<<< HEAD
     public void read()
     {
         Optional<City> read = this.cityService.read(this.city.getId());
@@ -48,11 +48,19 @@ public class CityServiceImplTest {
         this.cityService.delete(this.city);
         List<City> listOfCities = this.cityService.findAll();
         assertEquals(0, listOfCities.size());
+=======
+    public void read() {
+
     }
 
     @Test
-    public void readAll()
-    {
+    public void delete() {
+
+>>>>>>> f60ce44ae70100ef5dbda6b4818a90ab87063deb
+    }
+
+    @Test
+    public void readAll() {
         List<City> cityList = this.cityService.findAll();
         assertEquals(0, cityList.size());
     }
