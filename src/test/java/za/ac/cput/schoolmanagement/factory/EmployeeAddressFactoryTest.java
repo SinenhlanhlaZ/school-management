@@ -17,7 +17,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class EmployeeAddressFactoryTest {
 
-    City city = CityFactory.build("509","Cape Town");
+    private City city = CityFactory.build("509","Cape Town");
+    private Address address = AddressFactory.build("11",
+            "Tutu Street","4","Field",4909,city);
+    private EmployeeAddress employeeAddress = EmployeeAddressFactory.build("450",address);
     @Test
     public void buildNullId() {
         Exception exception = assertThrows(IllegalArgumentException.class,
@@ -27,8 +30,7 @@ class EmployeeAddressFactoryTest {
     }
     @Test
     public void buildEmployeeAddress() {
-        Address employeeAddress = AddressFactory.build("57","Fox Street",
-                "29","Seaview",2980, city);
+        EmployeeAddress employeeAddress = EmployeeAddressFactory.build("450",address);
         System.out.println(employeeAddress);
         assertNotNull(employeeAddress);
 

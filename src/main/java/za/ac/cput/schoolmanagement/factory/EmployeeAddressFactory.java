@@ -5,7 +5,7 @@ import za.ac.cput.schoolmanagement.domain.EmployeeAddress;
 import za.ac.cput.schoolmanagement.helper.StringHelper;
 /*
     EmployeeAddressFactory.java
-    Entity: EmployeeAddressFactory
+    Implementation of EmployeeAddressFactory
     Author: Ishmail T Mgwena (215088417)
     Date: 14 June 2022
 */

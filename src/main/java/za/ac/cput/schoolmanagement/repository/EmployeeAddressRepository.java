@@ -1,7 +1,7 @@
 package za.ac.cput.schoolmanagement.repository;
 /*
   EmployeeAddressRepository.java
-  Entity: EmployeeAddressRepository
+  EmployeeAddressRepository
   Author: Ishmail T Mgwena (215088417)
   Date: 14 June 2022
  */

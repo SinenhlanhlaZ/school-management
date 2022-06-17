@@ -12,9 +12,11 @@ import javax.validation.constraints.NotNull;
 */
 @Entity
 public class EmployeeAddress {
-@Id
+
+    @Id
 @NotNull
 private String staffId;
+
 @Embedded
 @NotNull
 private Address address;
