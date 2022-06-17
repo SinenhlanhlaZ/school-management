@@ -24,7 +24,6 @@ public class City
     private String name;
 
     @Embedded
-    @OneToOne
     private Country country;
 
     public City()
