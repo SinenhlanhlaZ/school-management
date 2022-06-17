@@ -6,6 +6,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Objects;
+
 /*
     Student.java
     Student Domain
@@ -16,7 +17,7 @@ import java.util.Objects;
 public class Student implements Serializable {
     @Id
     @NotNull
-    private  String studentId;
+    private String studentId;
     @NotNull
     private String email;
 
@@ -24,7 +25,8 @@ public class Student implements Serializable {
     @NotNull
     private Name name;
 
-    protected Student() {}
+    protected Student() {
+    }
 
     private Student(Builder builder) {
         this.studentId = builder.studentId;
@@ -92,7 +94,6 @@ public class Student implements Serializable {
     }
 
 
-
     public static class Builder {
         private String studentId, email;
         private Name name;
@@ -101,7 +102,8 @@ public class Student implements Serializable {
             this.studentId = studentId;
             return this;
         }
-        public Builder name (Name name) {
+
+        public Builder name(Name name) {
             this.name = name;
             return this;
         }

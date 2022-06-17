@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
+
 /*
     Country.java
     Nonzwakazi Mgxaji 2131815284
@@ -17,8 +18,8 @@ public class Country {
 
     private String name;
 
-    public Country()
-    {}
+    public Country() {
+    }
 
     private Country(Builder builder) {
         this.id = builder.id;
@@ -61,7 +62,8 @@ public class Country {
             this.id = id;
             return this;
         }
-        public Builder name (String name) {
+
+        public Builder name(String name) {
             this.name = name;
             return this;
         }
@@ -75,5 +77,5 @@ public class Country {
         public Country build() {
             return new Country(this);
         }
-}
+    }
 }

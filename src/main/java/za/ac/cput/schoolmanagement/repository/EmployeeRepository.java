@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 import za.ac.cput.schoolmanagement.domain.Employee;
 
 
-
 /*
     EmployeeRepository.java
     Repository for Employee

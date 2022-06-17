@@ -11,5 +11,5 @@ import za.ac.cput.schoolmanagement.domain.Country;
 */
 
 @Repository
-public interface CountryRepository extends JpaRepository<Country, String>{
+public interface CountryRepository extends JpaRepository<Country, String> {
 }

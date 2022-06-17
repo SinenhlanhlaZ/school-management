@@ -1,8 +1,8 @@
 package za.ac.cput.schoolmanagement.service.impl;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import za.ac.cput.schoolmanagement.domain.Name;
 import za.ac.cput.schoolmanagement.domain.Student;
 import za.ac.cput.schoolmanagement.factory.NameFactory;
@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 /*
     StudentServiceImpTest.java
     Test for Student Service
@@ -35,6 +36,7 @@ class StudentServiceImplTest {
         Student saved = this.studentService.save(this.student);
         assertEquals(this.student, saved);
     }
+
     //
     @Test
     void read() {
@@ -45,6 +47,7 @@ class StudentServiceImplTest {
                 () -> assertEquals(this.student, read.get())
         );
     }
+
     //finds the saved students
     @Test
     void findAll() {
@@ -52,6 +55,7 @@ class StudentServiceImplTest {
         assertEquals(0, studentList.size());
 
     }
+
     // delete - return nothing
     @Test
     void delete() {

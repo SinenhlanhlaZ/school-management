@@ -13,8 +13,7 @@ import za.ac.cput.schoolmanagement.domain.City;
 import za.ac.cput.schoolmanagement.helper.StringHelper;
 
 public class AddressFactory {
-    public static Address build(String unitNumber, String streetName, String streetNumber, String complexName, int postalCode, City city)
-    {
+    public static Address build(String unitNumber, String streetName, String streetNumber, String complexName, int postalCode, City city) {
         StringHelper.checkObjectNull("streetName", streetName);
         StringHelper.checkObjectNull("streetNumber", streetNumber);
         StringHelper.checkObjectNull("city", city);
