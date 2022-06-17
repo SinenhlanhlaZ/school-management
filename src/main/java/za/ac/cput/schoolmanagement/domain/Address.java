@@ -20,7 +20,6 @@ public class Address {
     private int postalCode;
 
     @Embedded
-    @OneToOne
     private City city;
 
     public Address() {
