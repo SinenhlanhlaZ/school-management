@@ -12,8 +12,7 @@ import za.ac.cput.schoolmanagement.service.ICityService;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 public class CityServiceImplTest {
