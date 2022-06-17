@@ -7,24 +7,21 @@ import javax.validation.constraints.NotNull;
 import java.util.Objects;
 /*
     Student.java
-    Repository for Student
+    Student Domain
     Author: Shina Kara 219333181
     Date: 12/06/2022
 */
 @Entity
 public class Student {
-
     @Id
     @NotNull
-    private String studentId;
-
-    private String email;
+    private  String studentId, email;
 
     @Embedded
+    @NotNull
     private Name name;
 
-    public Student() {
-    }
+    protected Student() {}
 
     private Student(Builder builder) {
         this.studentId = builder.studentId;
@@ -40,7 +37,6 @@ public class Student {
         return email;
     }
 
-    @Embedded
     public Name getName() {
         return name;
     }
@@ -123,5 +119,6 @@ public class Student {
             return new Student(this);
         }
     }
+
 }
 
