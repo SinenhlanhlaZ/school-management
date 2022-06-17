@@ -1,10 +1,16 @@
 package za.ac.cput.schoolmanagement.factory;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.schoolmanagement.domain.Country;
-import static org.junit.jupiter.api.Assertions.*;
 
 class CountryFactoryTest {
-}
 
-//still working on it
+    @Test
+    void buildWithValidId() {
+        Country country = new Country();
+        country.setId("17");
+
+        Assertions.assertNotNull(country.getId());
+    }
+}
