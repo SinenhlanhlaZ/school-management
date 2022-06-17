@@ -4,6 +4,7 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.Objects;
 /*
     Student.java
@@ -12,10 +13,12 @@ import java.util.Objects;
     Date: 12/06/2022
 */
 @Entity
-public class Student {
+public class Student implements Serializable {
     @Id
     @NotNull
-    private  String studentId, email;
+    private  String studentId;
+    @NotNull
+    private String email;
 
     @Embedded
     @NotNull
