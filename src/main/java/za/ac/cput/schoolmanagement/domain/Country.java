@@ -25,12 +25,22 @@ public class Country {
         this.name = builder.name;
     }
 
+
+
     public String getId() {
         return id;
     }
 
     public String getName() {
         return name;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
