@@ -16,7 +16,7 @@ public class StudentFactory {
         StringHelper.checkStringParam("email", email);
         StringHelper.checkObjectNull("name", name);
 
-        return new Student.Builder().studentId(studentId).email(email).name(name).build();
+        return new Student.Builder().setStudentId(studentId).setEmail(email).setName(name).build();
 
     }
 }
