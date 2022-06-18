@@ -52,7 +52,9 @@ public class EmployeeServiceImpl implements IEmployeeService {
         this.repository.delete(employee);
     }
 
-       /* Code a service to get the employee name given an employee email. Check if the email is valid and exists.*/
+    /* Question 5
+       Code a service to get the employee name given an employee email.
+       Check if the email is valid and exists.*/
        @Override
        public Optional<Employee> findByEmail(String email) {
            return this.repository.findByEmail(email);
