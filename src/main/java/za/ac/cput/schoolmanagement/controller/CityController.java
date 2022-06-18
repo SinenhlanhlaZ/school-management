@@ -14,6 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import za.ac.cput.schoolmanagement.api.CityAPI;
 import za.ac.cput.schoolmanagement.domain.City;
 import za.ac.cput.schoolmanagement.service.ICityService;
 
@@ -25,11 +26,11 @@ import java.util.List;
 @Slf4j
 public class CityController {
 
-    private ICityService cityService;
+    private final ICityService cityService;
+    private CityAPI cityAPI;
 
     @Autowired
-    CityController(ICityService cityService)
-    {
+    CityController(ICityService cityService) {
         this.cityService = cityService;
     }
 
@@ -60,6 +61,19 @@ public class CityController {
     public ResponseEntity<List<City>> findAll() {
         List<City> allCities = this.cityService.findAll();
         return ResponseEntity.ok(allCities);
+    }
+
+  /*  Question 7
+    Code a service to return the list of all cities in a given country.
+    The parameter passed is the countryId.
+    The return value is either a sorted list of city names or null (if no cities found for that countryId).*/
+
+    @GetMapping("read-citybycountryid/{countryId}")
+    public ResponseEntity<List<String>> findCitiesByCountry(@PathVariable String countryId) {
+        log.info("get the cities in country: {}", countryId);
+        List<String> cityList = this.cityAPI.findCitiesByCountry(countryId);
+        System.out.println(cityList);
+        return ResponseEntity.ok(cityList);
     }
 
 }

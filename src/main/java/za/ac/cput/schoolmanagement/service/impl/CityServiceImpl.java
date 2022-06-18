@@ -11,6 +11,7 @@ package za.ac.cput.schoolmanagement.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.schoolmanagement.domain.City;
+import za.ac.cput.schoolmanagement.domain.Country;
 import za.ac.cput.schoolmanagement.repository.CityRepository;
 import za.ac.cput.schoolmanagement.service.ICityService;
 
@@ -20,7 +21,7 @@ import java.util.Optional;
 @Service
 public class CityServiceImpl implements ICityService {
 
-    private CityRepository cityRepository;
+    private final CityRepository cityRepository;
 
     @Autowired
     public CityServiceImpl(CityRepository cityRepository) {
@@ -35,6 +36,7 @@ public class CityServiceImpl implements ICityService {
             delete(city.get());
         }
     }
+
 
     @Override
     public List<City> findAll() {
@@ -54,6 +56,20 @@ public class CityServiceImpl implements ICityService {
     @Override
     public void delete(City c) {
         this.cityRepository.delete(c);
+    }
+
+    /*  Question 7
+        Code a service to return the list of all cities in a given country.
+        The parameter passed is the countryId.
+         The return value is either a sorted list of city names or null (if no cities found for that countryId).*/
+    @Override
+    public List<City> findCitiesByCountry(Country country) {
+        try {
+            return this.cityRepository.findCitiesByCountry(country);
+        } catch (Exception i) {
+            System.out.println(i.getMessage());
+        }
+        return null;
     }
 
 }

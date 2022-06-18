@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import za.ac.cput.schoolmanagement.api.EmployeeAPI;
 import za.ac.cput.schoolmanagement.domain.Employee;
 import za.ac.cput.schoolmanagement.domain.Name;
 import za.ac.cput.schoolmanagement.helper.StringHelper;
@@ -25,10 +26,12 @@ import java.util.List;
 @Slf4j
 public class EmployeeController {
     private final IEmployeeService employeeService;
+    private final EmployeeAPI employeeAPI;
 
     @Autowired
-    EmployeeController(IEmployeeService employeeService) {
+    EmployeeController(IEmployeeService employeeService, EmployeeAPI employeeAPI) {
         this.employeeService = employeeService;
+        this.employeeAPI = employeeAPI;
     }
 
     @PostMapping("save")
@@ -41,8 +44,7 @@ public class EmployeeController {
     @GetMapping("read/{id}")
     public ResponseEntity<Employee> read(@PathVariable String id) {
         log.info("Read request: {}", id);
-        Employee employee = this.employeeService.read(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        Employee employee = this.employeeService.read(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return ResponseEntity.ok(employee);
     }
 
@@ -71,9 +73,23 @@ public class EmployeeController {
             log.info("Find The Names by an email request error: {}", e.getStackTrace());
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
-        Employee employee = this.employeeService.findByEmail(email).orElseThrow(
-                () -> new ResponseStatusException(HttpStatus.NOT_FOUND)
-        );
+        Employee employee = this.employeeService.findByEmail(email).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return ResponseEntity.ok(employee.getName());
+    }
+
+    /*  Question 6
+      Implement a service to retrieve all employee name(s) living in a particular city.
+      The formal parameter passed is the cityId.
+    */
+    @GetMapping("read-employeenamebycity/{cityId}")
+    public ResponseEntity<List<Name>> findEmpByCity(@PathVariable String cityId) {
+        List<Name> employeeNameList = null;
+        try {
+            log.info("Read employee name by city id: {}", cityId);
+            employeeNameList = employeeAPI.findEmployeesInCity(cityId);
+        } catch (Exception i) {
+            System.out.println(i.getMessage());
+        }
+        return ResponseEntity.ok(employeeNameList);
     }
 }
