@@ -10,7 +10,13 @@ import za.ac.cput.schoolmanagement.domain.EmployeeAddress;
 import za.ac.cput.schoolmanagement.service.IEmployeeAddressService;
 
 import java.util.List;
+/*
+    EmployeeAddress.java
+    Implementation of EmployeeAddressController
+    Author: Ishmail T Mgwena (215088417)
+    Date: 14 June 2022
 
+*/
 @RestController
 @RequestMapping("schoolmanagement/employee-address")
 @Slf4j
