@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import za.ac.cput.schoolmanagement.api.StudentAPI;
 import za.ac.cput.schoolmanagement.domain.Student;
 import za.ac.cput.schoolmanagement.service.IStudentService;
 
@@ -23,10 +24,12 @@ import java.util.List;
 @Slf4j
 public class StudentController {
     private final IStudentService studentService;
+    private final StudentAPI studentAPI;
 
     @Autowired
-    public StudentController(IStudentService studentService) {
+    public StudentController(IStudentService studentService, StudentAPI studentAPI) {
         this.studentService = studentService;
+        this.studentAPI = studentAPI;
     }
 
     @PostMapping("save")
@@ -39,8 +42,7 @@ public class StudentController {
     @GetMapping("read/{id}")
     public ResponseEntity<Student> read(@PathVariable String id) {
         log.info("Read request: {}", id);
-        Student student = this.studentService.read(id).orElseThrow(() -> new ResponseStatusException(
-                HttpStatus.NOT_FOUND));
+        Student student = this.studentService.read(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 
         return ResponseEntity.ok(student);
     }
@@ -56,6 +58,24 @@ public class StudentController {
     public ResponseEntity<List<Student>> findAll() {
         List<Student> student = this.studentService.findAll();
         return ResponseEntity.ok(student);
+    }
+
+
+    /* Question 8
+     Using your knowledge of Facade design pattern, implement a service to retrieve a list containing the last name of all the students in the same country,
+     given a country id.
+     Hint: Revisit Q6 to ensure that it was implemented correctly*/
+
+    @GetMapping("readlastnamebycountry/{countryId}")
+    public ResponseEntity<List<String>> findStudentsInCountry(@PathVariable String countryId) {
+        List<String> lastNameList = null;
+        try {
+            log.info("Get the Student last names by their country id {}", countryId);
+            lastNameList = this.studentAPI.findStudentsInCountry(countryId);
+        } catch (Exception i) {
+            System.out.println(i.getMessage());
+        }
+        return ResponseEntity.ok(lastNameList);
     }
 
 }

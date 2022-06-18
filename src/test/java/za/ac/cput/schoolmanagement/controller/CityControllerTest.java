@@ -1,7 +1,6 @@
 package za.ac.cput.schoolmanagement.controller;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,21 +8,22 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import za.ac.cput.schoolmanagement.domain.*;
+import za.ac.cput.schoolmanagement.domain.Address;
+import za.ac.cput.schoolmanagement.domain.City;
+import za.ac.cput.schoolmanagement.domain.Country;
 import za.ac.cput.schoolmanagement.factory.AddressFactory;
 import za.ac.cput.schoolmanagement.factory.CityFactory;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class CityControllerTest {
 
-    private Address addr = AddressFactory.build("5",
-            "Ninth Avenue", "91", "Avonmore",
-            4001, new City());
 
     @LocalServerPort
     private int portNum;
 
+    private Address addr;
     private City city;
     private String url;
 
@@ -35,13 +35,16 @@ public class CityControllerTest {
 
     @BeforeEach
     void setUp() {
+        this.addr = AddressFactory.build("5",
+                "Ninth Avenue", "91", "Avonmore",
+                4001, new City());
         this.city = CityFactory.build("1", "Durban", new Country());
         this.url = "http://localhost:" + this.portNum + "/schoolmanagement/employee/";
     }
 
     @Test
     public void save() {
-        String strUrl = url+"save";
+        String strUrl = url + "save";
         ResponseEntity<City> response = this.restTemplate.postForEntity(strUrl, this.city, City.class);
         assertAll(() -> assertEquals(HttpStatus.OK, response.getStatusCode()), () -> assertNotNull(response.getBody()));
     }
