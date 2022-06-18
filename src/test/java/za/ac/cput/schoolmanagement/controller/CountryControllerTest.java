@@ -20,7 +20,7 @@ Nonzwakazi Mgxaji 213181584
  */
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class CountryControllerTest {
+public class CountryControllerTest {
 
     @LocalServerPort
     private int port;
