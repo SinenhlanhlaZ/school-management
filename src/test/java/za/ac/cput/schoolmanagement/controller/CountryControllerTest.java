@@ -19,6 +19,7 @@ Country Controller Test
 Nonzwakazi Mgxaji 213181584
  */
 
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class CountryControllerTest {
 
     @LocalServerPort
@@ -82,5 +83,4 @@ public class CountryControllerTest {
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
                 () -> assertEquals(0, response.getBody().length));
     }
-
 }
